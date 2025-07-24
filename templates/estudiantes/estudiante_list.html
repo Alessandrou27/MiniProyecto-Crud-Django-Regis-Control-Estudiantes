@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Estudiantes</title>
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Estudiantes 📋</h1>
+        
+        <form method="get" style="margin-bottom: 24px; display: flex; justify-content: flex-end; gap: 10px;">
+            <input type="text" name="q" placeholder="Buscar por nombre" value="{{ request.GET.q }}" style="padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; min-width: 200px;">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+
+        <div class="estudiantes-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Carrera</th>
+                        <th>Ciclo</th>
+                        <th>Correo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for estudiante in estudiantes %}
+                        <tr>
+                            <td>{{ estudiante.nombre }}</td>
+                            <td>{{ estudiante.carrera }}</td>
+                            <td>{{ estudiante.ciclo }}</td>
+                            <td>{{ estudiante.correo }}</td>
+                            <td>
+                                <a href="{% url 'estudiante_edit' estudiante.pk %}" class="btn btn-success">Editar</a>
+                                <a href="{% url 'estudiante_delete' estudiante.pk %}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="actions">
+            <a href="{% url 'estudiante_create' %}" class="btn btn-primary">Nuevo Estudiante</a>
+        </div>
+    </div>
+</body>
+</html>
