@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Estudiante
+from estudiantes.models import Estudiante
 
 class EstudianteModelTest(TestCase):
     def test_crear_estudiante(self):
