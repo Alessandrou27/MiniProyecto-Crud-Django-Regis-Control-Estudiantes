@@ -9,7 +9,6 @@ Desarrollar un sistema de gestión de estudiantes que permita:
 - Eliminar estudiantes del sistema.
 - Buscar estudiantes por nombre.
 - Garantizar una experiencia de usuario clara y sin errores en el flujo principal.
-- Mantener la integridad de los datos y la secuencia de IDs en la base de datos.
 
 ## 🎯 Sprint Goal
 Desarrollar e implementar, utilizando el framework Django, un sistema de gestión de estudiantes que permita al usuario listar, registrar, editar y eliminar estudiantes de manera sencilla y eficiente. El objetivo es garantizar que todas las funcionalidades básicas estén operativas, con una experiencia de usuario clara, validaciones adecuadas y sin errores en el flujo principal.
